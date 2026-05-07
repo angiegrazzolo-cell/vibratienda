@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibra Sport Indumentaria</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; color: #111; background: #fff; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem; border-bottom: 1px solid #e5e5e5; position: sticky; top: 0; background: #fff; z-index: 10; }
+    .logo { font-size: 1.1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+    .logo span { font-weight: 400; color: #888; }
+    .nav-links { display: flex; gap: 1.5rem; font-size: 0.88rem; color: #666; }
+    .nav-links a { text-decoration: none; color: inherit; transition: color 0.2s; }
+    .nav-links a:hover { color: #111; }
+
+    /* HERO */
+    .hero { padding: 5rem 2rem; text-align: center; border-bottom: 1px solid #e5e5e5; background: #fafafa; }
+    .hero h1 { font-size: 2.6rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .hero p { color: #666; font-size: 1rem; max-width: 420px; margin: 0 auto 2rem; line-height: 1.7; }
+    .hero-btn { display: inline-block; background: #111; color: #fff; padding: 0.8rem 2.2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; text-decoration: none; letter-spacing: 0.03em; transition: background 0.2s; }
+    .hero-btn:hover { background: #333; }
+
+    /* PRODUCTOS */
+    .section { padding: 3rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .section-title { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #888; margin-bottom: 1.5rem; }
+    .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; }
+    .product-card { background: #f7f7f7; border-radius: 12px; overflow: hidden; border: 1px solid #eee; transition: transform 0.2s; }
+    .product-card:hover { transform: translateY(-3px); }
+    .product-img { height: 180px; background: #efefef; display: flex; align-items: center; justify-content: center; }
+    .product-img i { font-size: 48px; color: #bbb; }
+    .product-info { padding: 1rem; }
+    .product-name { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .product-cat { font-size: 0.78rem; color: #999; margin-bottom: 0.5rem; }
+    .product-price { font-size: 0.92rem; font-weight: 600; color: #111; }
+
+    /* NOTA para el dueño */
+    .edit-note { background: #fff8e1; border: 1px solid #ffe082; border-radius: 8px; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.82rem; color: #795548; }
+
+    hr { border: none; border-top: 1px solid #e5e5e5; margin: 0; }
+
+    /* CONTACTO */
+    .contact-section { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 3rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .contact-info h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; }
+    .contact-info p { color: #666; font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .wsp-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: #25D366; color: #fff; padding: 0.75rem 1.6rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+    .wsp-btn:hover { background: #1ebe5d; }
+    .wsp-btn i { font-size: 20px; }
+
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-size: 0.78rem; color: #888; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.07em; font-weight: 500; }
+    .form-group input, .form-group textarea { width: 100%; border: 1px solid #ddd; border-radius: 8px; padding: 0.7rem 1rem; font-size: 0.9rem; color: #111; font-family: inherit; transition: border-color 0.2s; background: #fff; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #111; }
+    .form-group textarea { height: 100px; resize: none; }
+    .submit-btn { background: #111; color: #fff; border: none; padding: 0.8rem 0; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.2s; }
+    .submit-btn:hover { background: #333; }
+
+    footer { padding: 1.5rem 2rem; border-top: 1px solid #e5e5e5; text-align: center; font-size: 0.8rem; color: #aaa; }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.8rem; }
+      .contact-section { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-links { display: none; }
+      .products { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <nav>
+    <div class="logo">Vibra <span>Sport</span></div>
+    <div class="nav-links">
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Indumentaria deportiva</h1>
+    <p>Ropa y accesorios para tu mejor rendimiento. Calidad y estilo en cada prenda.</p>
+    <a href="#productos" class="hero-btn">Ver colección</a>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="section" id="productos">
+    <p class="section-title">Productos destacados</p>
+    <div class="products">
+
+      <!-- PRODUCTO 1 — Editá nombre, categoría y precio -->
+      <div class="product-card">
+        <div class="product-img">
+          <!-- Para poner una foto, reemplazá las 3 líneas de abajo por: <img src="foto.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+          <i class="ti ti-shirt"></i>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Remera dry-fit</p>
+          <p class="product-cat">Camisetas</p>
+          <p class="product-price">$XX.XXX</p>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 2 -->
+      <div class="product-card">
+        <div class="product-img">
+          <i class="ti ti-run"></i>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Short deportivo</p>
+          <p class="product-cat">Pantalones</p>
+          <p class="product-price">$XX.XXX</p>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 3 -->
+      <div class="product-card">
+        <div class="product-img">
+          <i class="ti ti-backpack"></i>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Mochila sport</p>
+          <p class="product-cat">Accesorios</p>
+          <p class="product-price">$XX.XXX</p>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 4 -->
+      <div class="product-card">
+        <div class="product-img">
+          <i class="ti ti-cap"></i>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Gorra premium</p>
+          <p class="product-cat">Accesorios</p>
+          <p class="product-price">$XX.XXX</p>
+        </div>
+      </div>
+
+      <!-- Para agregar más productos, copiá uno de los bloques de arriba y pegalo acá -->
+
+    </div>
+
+    <div class="edit-note">
+      ✏️ <strong>Para personalizar:</strong> cambiá los nombres, precios y categorías directamente en el HTML. Para agregar fotos, reemplazá el ícono por una etiqueta &lt;img&gt;.
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- CONTACTO -->
+  <section class="contact-section" id="contacto">
+    <div class="contact-info">
+      <h2>Hablanos por WhatsApp</h2>
+      <p>Consultá por talles, precios y envíos. Te respondemos a la brevedad.</p>
+      <a href="https://wa.me/543491439529" class="wsp-btn" target="_blank">
+        <i class="ti ti-brand-whatsapp"></i>
+        Escribinos
+      </a>
+    </div>
+    <div>
+      <p class="section-title">O dejanos tu consulta</p>
+      <form action="https://formspree.io/f/XXXXXXXX" method="POST">
+        <!-- Para activar el formulario gratis: creá cuenta en formspree.io y reemplazá XXXXXXXX por tu ID -->
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea name="mensaje" placeholder="¿En qué te podemos ayudar?" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Enviar consulta</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Vibra Sport Indumentaria — Todos los derechos reservados
+  </footer>
+
+</body>
+</html>
